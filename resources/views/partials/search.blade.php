@@ -6,8 +6,5 @@
   style="color:#000;" />
         <button type="button" class="btn btn-info">
           <span class="glyphicon glyphicon-search"></span> Search
-        </button>
-
-
-        
+        </button>        
       </p>
