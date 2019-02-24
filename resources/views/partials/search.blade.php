@@ -1,10 +1,9 @@
 
 
-      <p>  <input type="text" name="theName" value="Customer Surname"
-  onblur="if(this.value==''){ this.value='Customer surname'; this.style.color='#000';}"
-  onfocus="if(this.value=='Customer Surname'){ this.value=''; this.style.color='#000';}"
-  style="color:#000;" />
-        <button type="button" class="btn btn-info">
-          <span class="glyphicon glyphicon-search"></span> Search
-        </button>        
-      </p>
+      <div class="panel-body">
+
+         <form class="example" method="get" action="action_page_users" style="max-width:300px">
+             <input type="text" placeholder="Search.." name="search">
+             <button type="submit" class="fa fa-search btn btn-danger"> Search</button>
+         </form>
+      </div>
