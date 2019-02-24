@@ -55,7 +55,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Repair Details
+                <div class="card-header">Previous or Repair Details
                 </div>
 
                 <div class="card-body">

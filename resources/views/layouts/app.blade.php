@@ -24,7 +24,15 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
       @yield('style')
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script language="javascript" type="text/javascript" src="js/datetimepicker.js">
 
+      //Date Time Picker script- by TengYong Ng of http://www.rainforestnet.com
+      //Script featured on JavaScript Kit (http://www.javascriptkit.com)
+      //For this script, visit http://www.javascriptkit.com
+
+</script>
 </head>
 <body>
     <div id="app">
