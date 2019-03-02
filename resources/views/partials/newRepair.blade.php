@@ -1,6 +1,7 @@
-<form method="post" action="">
+<form method="post" action="/repairDetails">
+  {{csrf_field()}}
    @foreach($users as $user)
-  <input class="bigger3" type="hidden" name="id"  value=" {{$user->id}} "/>
+  <input class="bigger3" type="text" name="id"  value=" {{$user->id}} "/>
    @endforeach
  <p>Choose a device and Make below:</p>
 
@@ -10,6 +11,7 @@
   <option value="tablet">Tablet</option>
   <option value="phone">Phone</option>
 </select>&nbsp;&nbsp;&nbsp;
+
  <select name="make" size="4">
   <option value="dell">Dell</option>
   <option value="lenovo">Lenovo</option>
@@ -19,10 +21,11 @@
   <option value="microsoft">Microsoft</option>
   <option value="razer">Razer</option>
 </select><br><br>
+
  <label for="time">Todays Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
- <input name="current_date" type="text" value="<?php echo  date("d/m/Y") ; ?>"><br />
+ <input name="created_at" type="text" value="<?php echo  date("Y/m/d") ; ?>"><br />
  <label for="time">Complete Date </label>
- <input type="date" name="bday">
+ <input type="date" name="completed_at">
  <!-- <input id="demo1" type="text" size="25">&nbsp;&nbsp;<a href="javascript:NewCal('demo1','DDMMYYYY')">
      <i style="font-size:24px" class="fa" alt="Pick a date">&#xf073;</i></a> -->
 <br><br>

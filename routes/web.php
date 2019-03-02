@@ -25,4 +25,12 @@ Route::get('/usersDetails', 'SearchController@selDetails');
 
 Route::get('/pastRepairDetails', 'repairDetailsController@selDetails');
 
-Route::post('/pastRepairDetails', 'repairDetailsController@selDetailsNow');
+Route::get('/pastRepairDetailss', 'repairDetailsController@selDetailss');
+
+Route::post('/pastRepairDetails', 'repairDetailsController@selDetails');
+
+Route::post('/repairDetails', 'repairDetailsController@repairDetailsNow');
+
+Route::post('/repairDetails2', 'repairDetailsController@repairDetailsNow2');
+
+Route::post('/repairDetails3', 'repairDetailsController@repairDetails3'); //goes to repair form

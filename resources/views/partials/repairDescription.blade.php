@@ -1,14 +1,31 @@
 
 
-<input class="bigger3" type="hidden" name="id"  value=" "/>
+@foreach($users as $user)
+<input class="bigger3" type="text" name="id"  value=" {{$user->id}} "/>
+<input class="bigger3" type="text" name="firstname"  value=" {{$user->firstname}} "/>
+<input class="bigger3" type="text" name="lastname"  value=" {{$user->lastname}} "/><br><br>
+@endforeach
 
-<label for="time">Device:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label><input name="items" type="text" value="">&nbsp;&nbsp;&nbsp;
-<label for="time">Make:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label><input name="items" type="text" value="">&nbsp;&nbsp;&nbsp;
+
+
+@foreach($repairinfo as $reinfo)
+<form method="post" action="/repairDetails">
+  {{csrf_field()}}
+<input class="bigger3" type="hidden" name="users_id"  value=" {{$reinfo->users_id}} "/><br>
+<label for="time">Device:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+<input name="items" type="text" value="{{$reinfo->items}}">&nbsp;&nbsp;&nbsp;
+<label for="time">Make:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+<input name="make" type="text" value="{{$reinfo->make}}">&nbsp;&nbsp;&nbsp;
 
 <br>
-<label for="time">Start Date:&nbsp; </label><input name="repairDetails" type="text" value="">&nbsp;&nbsp;&nbsp;
-<label for="time">Complete Date:&nbsp; </label><input name="complete date" type="text" value="">
+<label for="time">Start Date:&nbsp; </label>
+<input name="created_at" type="text" value="{{ date('d-m-Y', strtotime(($reinfo->created_at)))}}">&nbsp;&nbsp;&nbsp;
+<label for="time">Complete Date:&nbsp; </label>
+<input name="completed_at" type="text" value="{{date('d-m-Y', strtotime(($reinfo->completed_at))) }}">
 <br>
 <label for="time">Repair Description:&nbsp; </label>
- <textarea name="message1" style="width:600px; height:100px;">some text</textarea>
- </textarea><br><br>
+<input name="message1" style="width:600px; height:100px;" value="{{$reinfo->message1}}">
+<br><br>
+<button type="submit" class="btn btn-success" onclick="myFunction()" target="_self" > Print This Repair </button>
+</form>
+@endforeach

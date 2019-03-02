@@ -78,7 +78,16 @@
                 </div>
 
                 <div class="card-body">
-                  @include('partials.newRepair')
+
+                  <form method="post" action="/repairDetails3">
+                    {{csrf_field()}}
+                     @foreach($users as $user)
+                    <input class="bigger3" type="hidden" name="users_id"  value=" {{$user->id}} "/>
+                     @endforeach
+                  <button type="submit" class="btn btn-success" > Repair Form </button>
+                  </form>
+
+
                 </div>
                 <div class="card-body">
                 </div>

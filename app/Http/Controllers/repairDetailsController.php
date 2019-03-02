@@ -15,22 +15,73 @@ class repairDetailsController extends Controller
         $this->middleware('auth');
     }
 
+//directs to the repair details page
   public function selDetails()
   {
     $users = DB::table('users')
-                    ->where('id', '=', id())
+                    ->where('id', $_POST['id'])
                     ->get();
 
-      return view('/pastRepairDetails', compact('users'));
+    $repairinfo = DB::table('repairinfo')
+                              ->latest()
+                              ->where('users_id', $_POST['id'])
+                              ->get();
+      return view('/pastRepairDetails', compact(['users', 'repairinfo']));
   }
 
-  public function selDetailsNow()
+//directs to the pastrepairdetailss page
+  public function selDetailss()
+  {
+    $users = DB::table('users')
+                    ->where('id', $_POST['users_id'])
+                    ->get();
+
+      return view('/pastRepairDetailss', compact('users'));
+  }
+
+
+//inserts into the repairinfo database table
+  public function repairDetailsNow()
   {
    $users = DB::table('users')
                    ->latest()
                    ->where('id', $_POST['id'])
                    ->get();
+   $repairs = DB::table('repairinfo')->insert(
+            [
+               'users_id' => $_POST['id'],
+               'items' => $_POST[ 'items'],
+               'make' => $_POST['make'],
+               'created_at' => $_POST[ 'created_at'],
+               'completed_at' => $_POST['completed_at'],
+               'message1' => $_POST[ 'message1'],
+               'message2' => $_POST['message2']
 
-      return view('/pastRepairDetails', compact('users'));
+            ]);    //inserting a order to db
+    $repairinfo = DB::table('repairinfo')
+                              ->latest()
+                              ->where('users_id', $_POST['id'])
+                              ->get();
+
+
+      return view('/pastRepairDetails', compact(['users', 'repairs', 'repairinfo']));
   }
+
+
+
+
+//sets up repair form page
+  public function repairDetails3()
+  {
+   $users = DB::table('users')
+                   ->latest()
+                   ->where('id', $_POST['users_id'])
+                   ->get();
+
+      return view('/pastRepairDetailss', compact('users'));
+  }
+
+
+
+
 }
