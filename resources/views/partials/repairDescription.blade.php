@@ -1,16 +1,18 @@
 
 
+<form method="post" action="/pastRepairDetails">
+  {{csrf_field()}}
+@foreach($repairinfo as $reinfo)
 @foreach($users as $user)
-<input class="bigger3" type="text" name="id"  value=" {{$user->id}} "/>
+<input class="bigger3" type="hidden" name="id"  value=" {{$user->id}} "/>
 <input class="bigger3" type="text" name="firstname"  value=" {{$user->firstname}} "/>
 <input class="bigger3" type="text" name="lastname"  value=" {{$user->lastname}} "/><br><br>
 @endforeach
 
 
 
-@foreach($repairinfo as $reinfo)
-<form method="post" action="/repairDetails">
-  {{csrf_field()}}
+
+
 <input class="bigger3" type="hidden" name="users_id"  value=" {{$reinfo->users_id}} "/><br>
 <label for="time">Device:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
 <input name="items" type="text" value="{{$reinfo->items}}">&nbsp;&nbsp;&nbsp;
@@ -25,7 +27,10 @@
 <br>
 <label for="time">Repair Description:&nbsp; </label>
 <input name="message1" style="width:600px; height:100px;" value="{{$reinfo->message1}}">
+<br><label for="time">Description of the condition of the Device:&nbsp; </label>
+<input name="message2" style="width:600px; height:100px;" value="{{$reinfo->message2}}">
 <br><br>
-<button type="submit" class="btn btn-success" onclick="myFunction()" target="_self" > Print This Repair </button>
+<button type="submit" class="btn btn-success" onclick="myFunction()" > Print This Repair </button>
+<br><br>
 </form>
 @endforeach

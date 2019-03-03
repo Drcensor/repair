@@ -22,10 +22,11 @@ class repairDetailsController extends Controller
                     ->where('id', $_POST['id'])
                     ->get();
 
-    $repairinfo = DB::table('repairinfo')
-                              ->latest()
-                              ->where('users_id', $_POST['id'])
-                              ->get();
+      $repairinfo = DB::table('repairinfo')
+                                ->latest()
+                                ->where('users_id', $_POST['id'])
+                                ->get();
+
       return view('/pastRepairDetails', compact(['users', 'repairinfo']));
   }
 
@@ -47,6 +48,12 @@ class repairDetailsController extends Controller
                    ->latest()
                    ->where('id', $_POST['id'])
                    ->get();
+  // $users = DB::table('users')->Update(
+  //   [
+  //     'phone' => $_POST['phone']
+  //   ])
+  //   ;
+
    $repairs = DB::table('repairinfo')->insert(
             [
                'users_id' => $_POST['id'],
@@ -81,6 +88,31 @@ class repairDetailsController extends Controller
       return view('/pastRepairDetailss', compact('users'));
   }
 
+  public function phoneUpdate()
+  {
+
+    $users = DB::table('users')
+                    ->latest()
+                    ->where('id', $_POST['id'])
+                    ->get();
+
+         $updates =  DB::table('users')
+            ->where('id',  $_POST['id'])
+            ->update([
+            'phone' => request('phone'),
+        ]);
+
+        $repairinfo = DB::table('repairinfo')
+                                  ->latest()
+                                  ->where('users_id', $_POST['id'])
+                                  ->get();
+
+        $users = DB::table('users')
+                        ->latest()
+                        ->where('id', $_POST['id'])
+                        ->get();
+      return view('/pastRepairDetails', compact('updates', 'users', 'repairinfo'));
+  }
 
 
 

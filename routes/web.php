@@ -34,3 +34,5 @@ Route::post('/repairDetails', 'repairDetailsController@repairDetailsNow');
 Route::post('/repairDetails2', 'repairDetailsController@repairDetailsNow2');
 
 Route::post('/repairDetails3', 'repairDetailsController@repairDetails3'); //goes to repair form
+
+Route::post('/customerNumber', 'repairDetailsController@phoneUpdate');// update customers phone number 

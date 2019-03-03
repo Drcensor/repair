@@ -1,8 +1,17 @@
+
+
+
+
 <form method="post" action="/repairDetails">
   {{csrf_field()}}
-   @foreach($users as $user)
-  <input class="bigger3" type="text" name="id"  value=" {{$user->id}} "/>
-   @endforeach
+
+  @foreach($users as $user)
+  <input class="bigger3" type="hidden" name="id"  value=" {{$user->id}} "/>
+  <input class="bigger3" type="text" name="firstname"  value=" {{$user->firstname}} "/>
+  <input class="bigger3" type="text" name="lastname"  value=" {{$user->lastname}} "/>
+  <br><br>
+  @endforeach
+
  <p>Choose a device and Make below:</p>
 
  <select name="items" size="4">
@@ -20,14 +29,19 @@
   <option value="asus">Asus</option>
   <option value="microsoft">Microsoft</option>
   <option value="razer">Razer</option>
+  <option value="samsung">Samsung</option>
+  <option value="apple">Apple</option>
+  <option value="huawei">Huawei</option>
+  <option value="nokia">Nokia</option>
+  <option value="sony">Sony</option>
+  <option value="htc">HTC</option>
 </select><br><br>
 
  <label for="time">Todays Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
  <input name="created_at" type="text" value="<?php echo  date("Y/m/d") ; ?>"><br />
  <label for="time">Complete Date </label>
  <input type="date" name="completed_at">
- <!-- <input id="demo1" type="text" size="25">&nbsp;&nbsp;<a href="javascript:NewCal('demo1','DDMMYYYY')">
-     <i style="font-size:24px" class="fa" alt="Pick a date">&#xf073;</i></a> -->
+
 <br><br>
 <label for="time">Repair Issue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
  <textarea name="message1" style="width:600px; height:100px;">some text</textarea>
