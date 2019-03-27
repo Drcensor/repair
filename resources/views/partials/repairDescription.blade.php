@@ -26,9 +26,9 @@
 <input name="completed_at" type="text" value="{{date('d-m-Y', strtotime(($reinfo->completed_at))) }}">
 <br>
 <label for="time">Repair Description:&nbsp; </label>
-<input name="message1" style="width:600px; height:100px;" value="{{$reinfo->message1}}">
+<input name="message1" style="width:565px; height:100px;" value="{{$reinfo->message1}}">
 <br><label for="time">Description of the condition of the Device:&nbsp; </label>
-<input name="message2" style="width:600px; height:100px;" value="{{$reinfo->message2}}">
+<input name="message2" style="width:565px; height:100px;" value="{{$reinfo->message2}}">
 <br><br>
 <button type="submit" class="btn btn-success" onclick="myFunction()" > Print This Repair </button>
 <br><br>

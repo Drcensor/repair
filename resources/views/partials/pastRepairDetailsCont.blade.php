@@ -1,7 +1,7 @@
 <table>
           <thead>
             <tr>
-              <th class="bigger3">User Id</th>
+              <th class="bigger1">User Id</th>
               <th class="bigger2">First name</th>
               <th class="bigger2">Last Name</th>
               <th class="bigger4">Email</th>
@@ -13,7 +13,7 @@
 
            @foreach($users as $user)
            <tr>
-                 <td><input class="bigger3" type="text" name="id"  value="{{$user->id}} "/> </td>
+                 <td><input class="bigger1" type="text" name="id"  value="{{$user->id}} "/> </td>
           	    <td><input class="bigger3" type="text" name="firstname"  value="{{$user->firstname}} "/> </td>
                 <td><input class="bigger3" type="text" name="lastname"  value="{{$user->lastname}}" /> </td>
                 <td><input class="bigger4" type="text" name="email"  value="{{$user->email}}" /> </td>

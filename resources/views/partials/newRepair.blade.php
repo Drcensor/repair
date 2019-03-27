@@ -44,10 +44,10 @@
 
 <br><br>
 <label for="time">Repair Issue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
- <textarea name="message1" style="width:600px; height:100px;">some text</textarea>
+ <textarea name="message1" style="width:565px; height:100px;">some text</textarea>
 <br /><br />
 <label for="time">Device condition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
- <textarea name="message2" style="width:600px; height:100px;">some text</textarea>
+ <textarea name="message2" style="width:565px; height:100px;">some text</textarea>
 <br /><br />
 <button type="submit" class="btn btn-success" > Send </button>
 </form>

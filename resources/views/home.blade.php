@@ -16,10 +16,10 @@
                 </div>
 
                 <div class="card-body">
-
+                  @include('partials.search')
 
                 </div>
-                  @include('partials.search')
+
             </div>
         </div>
     </div>

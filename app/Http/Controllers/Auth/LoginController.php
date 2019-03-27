@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -32,8 +33,26 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
+
+      //     protected function logout() {
+      //     $this->middleware('guest')->except('logout');
+      //     return redirect('/');
+      // }
+      public function logout(Request $request){
         $this->middleware('guest')->except('logout');
-    }
+        //  $this->guard()->logout();
+        $request->session()->invalidate();
+        return $this->loggedOut($request) ?: redirect('/');
+           }
+
+      public function logout2(Request $request){
+        $this->middleware('guest')->except('logout');
+        //  $this->guard()->logout();
+        $request->session()->invalidate();
+        return $this->loggedOut($request) ?: redirect('/register');
+           }
 }

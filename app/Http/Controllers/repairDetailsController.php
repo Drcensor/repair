@@ -48,11 +48,6 @@ class repairDetailsController extends Controller
                    ->latest()
                    ->where('id', $_POST['id'])
                    ->get();
-  // $users = DB::table('users')->Update(
-  //   [
-  //     'phone' => $_POST['phone']
-  //   ])
-  //   ;
 
    $repairs = DB::table('repairinfo')->insert(
             [
@@ -64,7 +59,7 @@ class repairDetailsController extends Controller
                'message1' => $_POST[ 'message1'],
                'message2' => $_POST['message2']
 
-            ]);    //inserting a order to db
+            ]);    //inserting a data to db
     $repairinfo = DB::table('repairinfo')
                               ->latest()
                               ->where('users_id', $_POST['id'])

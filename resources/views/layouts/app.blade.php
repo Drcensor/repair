@@ -26,7 +26,7 @@
       @yield('style')
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+      <link href="{{ asset('css/search.css') }}" rel="stylesheet">
 
       <script>      function myFunction() {        window.print();      }      </script>
 </head>
@@ -73,6 +73,16 @@
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+                                    <a class="dropdown-item" href="{{ route('logout2') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form2').submit();">
+                                        {{ __('Register New Customer') }}
+                                    </a>
+
+                                    <form id="logout-form2" action="{{ route('logout2') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>

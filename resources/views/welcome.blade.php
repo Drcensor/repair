@@ -89,6 +89,7 @@
                 </div>
 
                 <img src="img/shoprepair.png" alt="logo"/>
+              
             </div>
         </div>
     </body>

@@ -7,3 +7,4 @@
              <button type="submit" class="fa fa-search btn btn-danger"> Search</button>
          </form>
       </div>
+<!-- // instructions onhow this search works are on the seachController page/searchUser -->
