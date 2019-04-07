@@ -19,20 +19,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/action_page_users', 'SearchController@searchUser');
+Route::get('/action_page_users', 'SearchController@searchUser')->middleware('auth');
 
-Route::get('/usersDetails', 'SearchController@selDetails');
+Route::get('/usersDetails', 'SearchController@selDetails')->middleware('auth');
 
-Route::get('/pastRepairDetails', 'repairDetailsController@selDetails');
+Route::get('/pastRepairDetails', 'repairDetailsController@selDetails')->middleware('auth');
 
-Route::get('/pastRepairDetailss', 'repairDetailsController@selDetailss');
+Route::get('/pastRepairDetailss', 'repairDetailsController@selDetailss')->middleware('auth');
 
-Route::post('/pastRepairDetails', 'repairDetailsController@selDetails');
+Route::post('/pastRepairDetails', 'repairDetailsController@selDetails')->middleware('auth');
 
-Route::post('/repairDetails', 'repairDetailsController@repairDetailsNow');
+Route::post('/repairDetails', 'repairDetailsController@repairDetailsNow')->middleware('auth');
 
-Route::post('/repairDetails2', 'repairDetailsController@repairDetailsNow2');
+Route::post('/repairDetails2', 'repairDetailsController@repairDetailsNow2')->middleware('auth');
 
-Route::post('/repairDetails3', 'repairDetailsController@repairDetails3'); //goes to repair form
+Route::post('/repairDetails3', 'repairDetailsController@repairDetails3')->middleware('auth'); //goes to repair form
 
-Route::post('/customerNumber', 'repairDetailsController@phoneUpdate');// update customers phone number 
+Route::post('/customerNumber', 'repairDetailsController@phoneUpdate')->middleware('auth');// update customers phone number

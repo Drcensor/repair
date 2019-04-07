@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  Fenton shop Repair
+                  <!-- Fenton shop Repair -->
                 </div>
 
                 <div class="links">
@@ -89,7 +89,7 @@
                 </div>
 
                 <img src="img/shoprepair.png" alt="logo"/>
-              
+
             </div>
         </div>
     </body>
