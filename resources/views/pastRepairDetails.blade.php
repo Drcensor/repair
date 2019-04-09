@@ -7,6 +7,8 @@
    .bigger2 {     width: 110px;   }
    .bigger3 {     width: 100px;   }
    .bigger4 {     width: 145px;   }
+  
+}
    </style>
    @endsection
 

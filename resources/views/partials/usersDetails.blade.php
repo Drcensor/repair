@@ -24,10 +24,10 @@
                             {{csrf_field()}}
 
                               <tr>
-                            <td><input class="bigger3" type="text" name="id"  value="{{$used->id}}"/> </td>
-                            <td><input class="bigger3" type="text" name="firstname"  value="{{$used->firstname}} "/> </td>
-                            <td><input class="bigger3" type="text" name="lastname"  value="{{$used->lastname}}" /> </td>
-                            <td><input class="bigger4" type="text" name="email"  value="{{$used->email}}" /> </td>
+                            <td><input class="bigger3" type="text" name="id"  value="{{$used->id}}" Readonly/> </td>
+                            <td><input class="bigger3" type="text" name="firstname"  value="{{$used->firstname}} " Readonly/> </td>
+                            <td><input class="bigger3" type="text" name="lastname"  value="{{$used->lastname}}" Readonly/> </td>
+                            <td><input class="bigger4" type="text" name="email"  value="{{$used->email}}" Readonly/> </td>
                             <td><button type="submit" class="btn btn-success" > Select </button></td>
                             </tr>
                           </form><br>

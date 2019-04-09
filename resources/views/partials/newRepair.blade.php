@@ -6,9 +6,9 @@
   {{csrf_field()}}
 
   @foreach($users as $user)
-  <input class="bigger3" type="hidden" name="id"  value=" {{$user->id}} "/>
-  <input class="bigger3" type="text" name="firstname"  value=" {{$user->firstname}} "/>
-  <input class="bigger3" type="text" name="lastname"  value=" {{$user->lastname}} "/>
+  <input class="bigger3" type="hidden" name="id"  value=" {{$user->id}} " Readonly/>
+  <input class="bigger3" type="text" name="firstname"  value=" {{$user->firstname}} " Readonly/>
+  <input class="bigger3" type="text" name="lastname"  value=" {{$user->lastname}} " Readonly/>
   <br><br>
   @endforeach
 
